@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="form_bg col-xs-12">
+      <form (submit)="onSignup(f.value)" #f="ngForm">
+        <h2 class="text-center">Login Page</h2>
+        <br/>
+        <div class="form-group col-sum-5">
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="Username"
+            required
+            name="name"
+            ngModel
+          >
+        </div>
+        <div class="form-group col-sum-5">
+          <input
+            type="email"
+            class="form-control"
+            id="userid"
+            placeholder="Email"
+            required
+            name="email"
+            ngModel
+          >
+        </div>
+        <div class="form-group col-sum-5">
+          <input
+            type="password"
+            class="form-control"
+            id="pwd"
+            required
+            placeholder="Password"
+            name="password"
+            ngModel>
+        </div>
+        <div class="form-group col-sum-5" *ngIf="isAdmin()">
+          <label for="admin">Admin</label>
+          <input
+            type="checkbox"
+            class="form-control"
+            id="admin"
+            name="admin"
+            ngModel>
+        </div>
+        <br/>
+        <div class="align-center col-sum-5">
+          <button type="submit" class="btn btn-default" id="login" [disabled]="!f.valid">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
